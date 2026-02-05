@@ -7,8 +7,6 @@ import torch.nn.functional as F
 import matplotlib.pyplot as plt
 import os
 
-device = 'mps'
-
 class Config:
     model_name: str = 'mobilenetv3_small_050.lamb_in1k'
     hidden_dim: int = 128
@@ -16,6 +14,7 @@ class Config:
     global_img_size: int = 224
 
 cfg = Config()
+device = 'cpu'
 
 class CNNAttentionPooling(nn.Module):
     def __init__(self, C, hidden, classes):
