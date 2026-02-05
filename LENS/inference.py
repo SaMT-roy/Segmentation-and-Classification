@@ -6,7 +6,7 @@ import os
 import matplotlib.pyplot as plt
 
 
-IMG_SIZE = 512
+IMG_SIZE = 224
 MEAN = np.array([0.485, 0.456, 0.406], dtype=np.float32)
 STD  = np.array([0.229, 0.224, 0.225], dtype=np.float32)
 
@@ -23,7 +23,7 @@ class_names = ['bad latte art', 'good latte art']
 def preprocess(img_bgr):
     """
     img_bgr: uint8 BGR image from cv2.imread
-    returns: (1, 3, 512, 512) float32 NCHW
+    returns: (1, 3, 224, 224) float32 NCHW
     """
 
     # BGR → RGB
